@@ -166,7 +166,7 @@ func (t *TaskMySQL) FindAll() (tasks []internal.Task, err error) {
 		return
 	}
 	defer rows.Close()
-	// iterate over the rows
+	// iterate over the rows using rows.Next()
 	for rows.Next() {
 		// scan the row into a task struct
 		var task internal.Task
